@@ -9,7 +9,7 @@
   <style>
     /* 全屏顶部导航 */
     .top-nav-bar {
-
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
@@ -17,7 +17,7 @@
       gap:24px;
       padding:12px 24px;
       background:#2c3e50;
-      z-index:99;
+      z-index:999;
     }
     .top-nav-bar a {
       color:#fff;
@@ -25,17 +25,17 @@
       font-size: 16px;
     }
 
-    /* 关键：整个文档主体向下偏移，避开顶部导航高度 */
-    .content {
-      margin-top: 60px !important;
-    }
-    /* 侧边栏下移，防止按钮被遮挡 */
+    /* 侧边栏整体下移，重点！避开顶部导航，防止折叠按钮被遮挡 */
     .sidebar {
-      margin-top: 60px !important;
+      margin-top: 64px !important;
     }
-    /* 右上角导航垂直位置修正 */
+    /* 主内容区域下移 */
+    .content {
+      margin-top: 64px !important;
+    }
+    /* 右上角导航位置适配 */
     .app-nav {
-      top: 16px !important;
+      top: 14px !important;
     }
   </style>
 </head>
