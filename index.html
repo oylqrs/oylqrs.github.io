@@ -88,29 +88,47 @@
 
   <script src="https://cdn.jsdelivr.net/npm/docsify@4.13.0/lib/docsify.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4.13.0/lib/plugins/search.min.js"></script>
-  <!-- Gitalk CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.js"></script>
 
 <script>
-window.addEventListener('load',()=>{
+function renderGitalk(){
+  // 删除旧容器，防止重复渲染
+  let old = document.getElementById('gitalk-container');
+  if(old) old.remove();
+
   const content = document.querySelector('.content');
   const div = document.createElement('div');
   div.id = 'gitalk-container';
   div.style.marginTop = '60px';
   content.appendChild(div);
 
+  // 关键：哈希取前50字符，满足Gitalk规范！
+  let pageId = location.hash || 'home';
+  if(pageId.length > 50){
+    pageId = pageId.substring(0,50);
+  }
+
   const gitalk = new Gitalk({
-    clientID: '你的GitHub ClientID',
-    clientSecret: '你的ClientSecret',
-    repo: '仓库名称',
-    owner: 'github用户名',
-    admin: ['你的用户名'],
-    id: location.hash,
+    clientID: '填入你的ClientID',
+    clientSecret: '填入你的ClientSecret',
+    repo: '你的仓库名',
+    owner: '你的Github用户名',
+    admin: ['你的Github用户名'],
+    id: pageId,
     distractionFreeMode: false
   });
   gitalk.render('gitalk-container');
-});
+}
+
+// Docsify渲染完成再初始化（比window.load更可靠）
+window.$docsify.plugins = [
+  function(hook){
+    hook.doneEach(function(){
+      renderGitalk();
+    });
+  }
+];
 </script>
   
   <!-- 手写明暗切换逻辑，无第三方插件、永不消失 -->
