@@ -11,7 +11,7 @@
   - [Script使用说明](guide/PassManager/script)
 - 🛡️jade
   - [jade使用说明](guide/PassManager/jade)
-- 🚀chameloen
-  - [chameloen使用说明](guide/PassManager/chameleon)
+- 🚀Chameleon
+  - [chameleon使用说明](guide/PassManager/chameleon)
 - 📖about
   - [about](guide/PassManager/about)
