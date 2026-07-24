@@ -1,17 +1,17 @@
 - [首页](/)
-- keepass
+- 🔐keepass
   - [硬件说明](guide/PassManager/hardware)
-- Fido2
+- 🔑Fido2
   - [Fido2](guide/PassManager/fido2)
-- OpenPGP
+- 📝OpenPGP
   - [OpenPGP](guide/PassManager/openpgp)
-- PIV
+- 💳 PIV
   - [PIV](guide/PassManager/piv)
-- Script
+- 📌Script
   - [Script](guide/PassManager/script)
-- jade
+- 🛡️jade
   - [jade](guide/PassManager/jade)
-- chameloen
+- 🚀chameloen
   - [chameloen](guide/PassManager/chameloen)
-- about
+- 📖about
   - [about](guide/PassManager/about)
