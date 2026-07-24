@@ -1,17 +1,17 @@
 - [首页](/)
 - 🔐keepass
-  - [硬件说明](guide/PassManager/hardware)
+  - [keepass使用说明](guide/PassManager/hardware)
 - 🔑Fido2
-  - [Fido2](guide/PassManager/fido2)
+  - [Fido2使用说明](guide/PassManager/fido2)
 - 📝OpenPGP
-  - [OpenPGP](guide/PassManager/openpgp)
+  - [OpenPGP使用说明](guide/PassManager/openpgp)
 - 💳 PIV
-  - [PIV](guide/PassManager/piv)
+  - [PIV使用说明](guide/PassManager/piv)
 - 📌Script
-  - [Script](guide/PassManager/script)
+  - [Script使用说明](guide/PassManager/script)
 - 🛡️jade
-  - [jade](guide/PassManager/jade)
+  - [jade使用说明](guide/PassManager/jade)
 - 🚀chameloen
-  - [chameloen](guide/PassManager/chameloen)
+  - [chameloen使用说明](guide/PassManager/chameloen)
 - 📖about
   - [about](guide/PassManager/about)
