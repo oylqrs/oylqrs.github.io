@@ -7,30 +7,40 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4.13.0/lib/themes/vue.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
   <style>
-    /* 自定义通栏顶部导航 */
+    /* 全屏顶部导航 */
     .top-nav-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       display:flex;
       gap:24px;
       padding:12px 24px;
       background:#2c3e50;
+      z-index:99;
     }
     .top-nav-bar a {
       color:#fff;
       text-decoration:none;
       font-size: 16px;
     }
-    /* 关键修复：侧边栏下移，防止被顶部导航遮挡 */
-    .sidebar {
-      margin-top: 64px !important;
+
+    /* 关键：整个文档主体向下偏移，避开顶部导航高度 */
+    .content {
+      margin-top: 60px !important;
     }
-    /* 右上角导航位置微调 */
+    /* 侧边栏下移，防止按钮被遮挡 */
+    .sidebar {
+      margin-top: 60px !important;
+    }
+    /* 右上角导航垂直位置修正 */
     .app-nav {
       top: 16px !important;
     }
   </style>
 </head>
 <body>
-  <!-- 固定顶部导航 -->
+  <!-- 固定顶部通栏导航 -->
   <div class="top-nav-bar">
     <a href="#/">首页</a>
     <a href="#/guide/PassManager/">PassManager文档</a>
