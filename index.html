@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4.13.0/lib/themes/vue.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
   <style>
-    /* 自定义全局顶部导航样式 */
+    /* 自定义通栏顶部导航 */
     .top-nav-bar {
       display:flex;
       gap:24px;
@@ -17,11 +17,20 @@
     .top-nav-bar a {
       color:#fff;
       text-decoration:none;
+      font-size: 16px;
+    }
+    /* 关键修复：侧边栏下移，防止被顶部导航遮挡 */
+    .sidebar {
+      margin-top: 64px !important;
+    }
+    /* 右上角导航位置微调 */
+    .app-nav {
+      top: 16px !important;
     }
   </style>
 </head>
 <body>
-  <!-- 固定通栏顶部导航，写在这里，不会和插件冲突 -->
+  <!-- 固定顶部导航 -->
   <div class="top-nav-bar">
     <a href="#/">首页</a>
     <a href="#/guide/PassManager/">PassManager文档</a>
