@@ -1,6 +1,6 @@
 - [首页](/)
 - # test1
-    -[硬件说明](guide/passManager/hardware)
+    -[硬件说明](guide/PassManager/hardware.md)
 
 
 # test1
