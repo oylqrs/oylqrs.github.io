@@ -12,6 +12,7 @@
 
 
 
+''
 
 =========================================================
 ✅ 注册流程（本质）
@@ -635,3 +636,4 @@ usbd_fido_DataOut() → ctaphid_process_packet() → ctaphid_assemble_msg()
  → 组装带签名、credID、authData 的 CBOR 响应 
  → CTAPHID 分片回传 USB → libfido2 重组完整响应包 → JS 拿到 AuthenticatorAssertionResponse 对象 → 上传网站后端 → 后端使用注册时保存的公钥验签，校验通过完成登录
 
+''
