@@ -1,8 +1,18 @@
 - [首页](/)
-- # test1
+- # keepass
     -[硬件说明](guide/PassManager/hardware.md)
+- # Fido2
+    -[Fido2](guide/PassManager/hardware.md)
+- # OpenPGP
+    -[OpenPGP](guide/PassManager/hardware.md)
+- # PIV
+    -[PIV](guide/PassManager/hardware.md)
+- # Script
+    -[Script](guide/PassManager/hardware.md)
+- # jade
+    -[jade](guide/PassManager/hardware.md)
+- # chameloen
+    -[chameloen](guide/PassManager/hardware.md)
+- # about
+    -[about](guide/PassManager/hardware.md)
 
-
-# test1
-# test2
-# test3
