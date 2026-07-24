@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Pages 测试页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        body {
+            background-color: #f5f7fa;
+            color: #222;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        h1 {
+            color: #24292f;
+            margin-bottom: 16px;
+        }
+        p {
+            line-height: 1.7;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+        .tip {
+            background-color: #eef6ff;
+            border-left: 4px solid #2386ff;
+            padding: 14px 18px;
+            margin: 24px 0;
+            border-radius: 6px;
+        }
+        button {
+            padding: 10px 22px;
+            background: #24292f;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        button:hover {
+            background: #3b3f48;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 GitHub Pages 部署测试成功</h1>
+        <p>如果你看到这个页面，说明静态网页已经正常部署！</p>
+
+        <div class="tip">
+            <strong>测试信息：</strong>
+            <br>仓库：GitHub Pages
+            <br>部署分支：main
+            <br>访问方式：静态 HTML
+        </div>
+
+        <p>当前时间：<span id="time"></span></p>
+        <button onclick="alert('页面 JS 运行正常！')">点击测试 JavaScript</button>
+    </div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('time').innerText = now.toLocaleString();
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
