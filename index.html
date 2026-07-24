@@ -3,19 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 放在head内 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-navbar-fixed/dist/navbar.css">
   <title>文档站点</title>
-  <!-- 默认主题样式先加载 -->
+  <!-- 默认主题 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
- 
-  <!-- 暗黑模式插件样式 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-dark-mode@latest/dist/style.min.css">
+  <!-- 置顶导航插件CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-navbar-fixed@0.1.2/dist/navbar.css">
+  <!-- 暗色模式 锁定稳定版本 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-dark-mode@0.8.2/dist/style.min.css">
 </head>
 <body>
   <div id="app"></div>
 
-  <!-- 【第一步】先定义配置！！ -->
   <script>
     window.$docsify = {
       name: '项目文档',
@@ -23,18 +21,18 @@
       loadSidebar: true,
       loadNavbar: true,
       subMaxLevel: 0,
+      cache: false,
       search: {
         placeholder: '搜索文档'
       }
     }
   </script>
 
-  <!-- 【第二步】再引入 docsify 核心JS -->
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
-  <!-- 明暗切换插件 -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify-dark-mode@latest/dist/index.min.js"></script>
-  <!-- 在docsify核心js之后引入 -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify-navbar-fixed/dist/navbar.js"></script>
+  <!-- 暗色模式JS（优先加载） -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-dark-mode@0.8.2/dist/index.min.js"></script>
+  <!-- 置顶导航插件JS -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-navbar-fixed@0.1.2/dist/navbar.js"></script>
 </body>
 </html>
