@@ -2,16 +2,16 @@
 - keepass
   - [硬件说明](guide/PassManager/hardware)
 - Fido2
-  - [Fido2](guide/PassManager/hardware)
+  - [Fido2](guide/PassManager/fido2)
 - OpenPGP
-  - [OpenPGP](guide/PassManager/hardware)
+  - [OpenPGP](guide/PassManager/openpgp)
 - PIV
-  - [PIV](guide/PassManager/hardware)
+  - [PIV](guide/PassManager/piv)
 - Script
-  - [Script](guide/PassManager/hardware)
+  - [Script](guide/PassManager/script)
 - jade
-  - [jade](guide/PassManager/hardware)
+  - [jade](guide/PassManager/jade)
 - chameloen
-  - [chameloen](guide/PassManager/hardware)
+  - [chameloen](guide/PassManager/chameloen)
 - about
-  - [about](guide/PassManager/hardware)
+  - [about](guide/PassManager/about)
