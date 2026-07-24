@@ -4,25 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>文档站点</title>
-  <!-- Docsify CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
-  <!-- 默认主题 -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+  <!-- 默认主题样式先加载 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
 </head>
 <body>
   <div id="app"></div>
+
+  <!-- 【第一步】先定义配置！！ -->
   <script>
     window.$docsify = {
       name: '项目文档',
-      repo: '', // 右上角github链接，不需要留空
-      loadSidebar: true,       // 加载侧边栏 _sidebar.md
-      loadNavbar: true,        // 加载顶部导航 _navbar.md
+      repo: '',
+      loadSidebar: true,
+      loadNavbar: true,
       subMaxLevel: 3,
       search: {
         placeholder: '搜索文档'
       }
     }
   </script>
+
+  <!-- 【第二步】再引入 docsify 核心JS -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
 </body>
 </html>
