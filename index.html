@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>文档站点</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4.13.0/lib/themes/vue.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
   <style>
-    /* 全屏顶部导航 */
+    /* 全局顶部导航 */
     .top-nav-bar {
       position: fixed;
       top: 0;
@@ -24,26 +23,49 @@
       text-decoration:none;
       font-size: 16px;
     }
-
-    /* 侧边栏整体下移，重点！避开顶部导航，防止折叠按钮被遮挡 */
+    /* 侧边栏下移，避开顶部导航，解决折叠按钮遮挡 */
     .sidebar {
       margin-top: 64px !important;
     }
-    /* 主内容区域下移 */
     .content {
       margin-top: 64px !important;
     }
-    /* 右上角导航位置适配 */
     .app-nav {
       top: 14px !important;
+    }
+
+    /* ===== 自定义明暗模式样式 ===== */
+    html.dark {
+      --text-color: #e6e6e6;
+      --bg-color: #1a1a1a;
+      --sidebar-bg: #242424;
+      --border-color: #333;
+    }
+    html.dark body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+    html.dark .sidebar {
+      background: var(--sidebar-bg);
+    }
+    html.dark .content {
+      background: var(--bg-color);
+    }
+    /* 切换按钮样式 */
+    .mode-toggle {
+      cursor: pointer;
+      margin-left:16px;
+      user-select: none;
     }
   </style>
 </head>
 <body>
-  <!-- 固定顶部通栏导航 -->
+  <!-- 顶部固定导航 -->
   <div class="top-nav-bar">
     <a href="#/">首页</a>
     <a href="#/guide/PassManager/">PassManager文档</a>
+    <!-- 明暗切换按钮，放在顶部导航，永远可见，不会消失！ -->
+    <span class="mode-toggle" id="modeBtn">🌙 深色模式</span>
   </div>
 
   <div id="app"></div>
@@ -64,6 +86,30 @@
 
   <script src="https://cdn.jsdelivr.net/npm/docsify@4.13.0/lib/docsify.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4.13.0/lib/plugins/search.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
+
+  <!-- 手写明暗切换逻辑，无第三方插件、永不消失 -->
+  <script>
+    (function(){
+      const btn = document.getElementById('modeBtn');
+      const html = document.documentElement;
+      // 读取本地存储
+      let mode = localStorage.getItem('site-theme');
+      if(mode === 'dark'){
+        html.classList.add('dark');
+        btn.innerText = '☀️ 浅色模式';
+      }
+      btn.onclick = function(){
+        if(html.classList.contains('dark')){
+          html.classList.remove('dark');
+          localStorage.setItem('site-theme','light');
+          btn.innerText = '🌙 深色模式';
+        }else{
+          html.classList.add('dark');
+          localStorage.setItem('site-theme','dark');
+          btn.innerText = '☀️ 浅色模式';
+        }
+      }
+    })();
+  </script>
 </body>
 </html>
