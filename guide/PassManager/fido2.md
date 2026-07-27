@@ -365,7 +365,7 @@ FIDO2 密钥底层 = ECC 椭圆曲线（secp256r1）
 ```
 
 
-
+```
 二、FIDO2 顶层对外 API（共 13 个）
 1）初始化 / 重置（3）
 fido2_init()
@@ -398,13 +398,13 @@ ctap2_credential_management()
 功能：凭证管理：枚举 / 删除 / 更新 resident key（最多 64 个）
 ctap2_hmac_secret()
 功能：HMAC-secret 扩展（用于 Web Crypto、SSH、PAM）
+```
 
 
 
 
 
-
-
+```
 ==============================================================================
 结论：完全可以纯原生 Python，不依赖任何第三方库，从零实现整套 FIDO2/WebAuthn 底层全流程
 只使用 Python 标准库：
@@ -434,6 +434,9 @@ GetAssertion，用凭证私钥对 (authData || clientDataHash) 签名
 依赖方校验逻辑：验签名、校验挑战、校验 rpIdHash、校验计数器防重放
 4. 存储层
 纯文件 JSON 存储凭证 ID、私钥整数、公钥点坐标，无外部数据库
+```
+
+```
 二、仅有的 Python 内置标准库清单（无任何 pip 安装）
 python
 运行
@@ -505,9 +508,10 @@ COSE key 是 CBOR map，键值固定：
 第四部分：完整注册（MakeCredential）底层流程
 第五部分：完整认证（GetAssertion）底层流程
 整套代码仅依赖 Python 标准库。
+```
 
 
-
+```
 ===============================================================
 
 五、标准文档学习顺序（从零手写底层推荐）
@@ -544,8 +548,8 @@ NIST P-256 & ECDSA-SHA256 RFC 标准（椭圆曲线签名数学逻辑）
 ---------------------------------------------------
 4设备层：CanoKey MCU 固件四层（USB 驱动 → CTAPHID 传输层 → CTAP2 命令解析 → 加密 / 存储）
 ---------------------------------------------------
-
-
+```
+```
 ===================================================
 一、FIDO2 注册流程：navigator.credentials.create () 新建凭证
 ===================================================
@@ -679,7 +683,8 @@ usbd_fido_DataOut() → ctaphid_process_packet() → ctaphid_assemble_msg()
 签名报文沿 USB 回传给浏览器，JS 拿到AuthenticatorAssertionResponse，网站后端用注册时保存的公钥校验签名合法性，登录成功。
 -------------------------------------------------------------------
 
-
+```
+```
 四、完整数据流向极简串联（注册示例）
 网站 JS create () → WebAuthn JSON 参数 → 浏览器 libfido2 序列化为 CBOR → CTAPHID_INIT 建立 CID 会话 → CBOR 载荷分包为 64 字节 USB HID 报告 
 → USB 中断下发 STM32 → usbd_fido 接收报文 → ctaphid 重组完整 CBOR → ctap2_handle_command 分发 makeCredential 
@@ -692,5 +697,5 @@ usbd_fido_DataOut() → ctaphid_process_packet() → ctaphid_assemble_msg()
 → 按 rpID /credID 检索 Flash 已有凭证 → 校验用户存在（按键确认）/PIN 校验 → 取出设备内私钥（不可导出）→ 私钥对挑战、认证数据做 ES256 签名
  → 组装带签名、credID、authData 的 CBOR 响应 
  → CTAPHID 分片回传 USB → libfido2 重组完整响应包 → JS 拿到 AuthenticatorAssertionResponse 对象 → 上传网站后端 → 后端使用注册时保存的公钥验签，校验通过完成登录
+```
 
-''
