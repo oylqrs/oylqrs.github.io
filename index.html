@@ -88,69 +88,10 @@
 
   <script src="https://cdn.jsdelivr.net/npm/docsify@4.13.0/lib/docsify.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4.13.0/lib/plugins/search.min.js"></script>
- <!-- Gitalk CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.js"></script>
 
-<script>
-// 解决中文/特殊字符 btoa 报错：UTF8→Latin1兼容编码
-function utf8ToBase64(str) {
-  return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {
-    return String.fromCharCode('0x' + p1);
-  }));
-}
+  
 
-function renderGitalk(){
-  // 清理旧容器，防止多次渲染
-  let old = document.getElementById('gitalk-container');
-  if(old) old.remove();
-
-  const content = document.querySelector('.content');
-  const div = document.createElement('div');
-  div.id = 'gitalk-container';
-  div.style.marginTop = '60px';
-  content.appendChild(div);
-
-  // 获取页面路由
-  let rawId = location.hash || '#/';
-  // 编码，规避中文、特殊字符，同时截断控制长度
-  let pageId = utf8ToBase64(rawId);
-  // Gitalk id 最大50字符，强制截断
-  if(pageId.length > 50) {
-    pageId = pageId.slice(0,50);
-  }
-
-  const gitalk = new Gitalk({
-    clientID: '你的ClientID',
-    clientSecret: '你的ClientSecret',
-    repo: '你的仓库名',
-    owner: '你的Github用户名',
-    admin: ['你的Github用户名'],
-    id: pageId,
-    distractionFreeMode: false
-  });
-  gitalk.render('gitalk-container');
-}
-
-// Docsify页面切换完成触发渲染（优于window.load）
-window.$docsify.plugins = [
-  function(hook){
-    hook.doneEach(function(){
-      renderGitalk();
-    });
-  }
-];
-</script>
-
-// Docsify渲染完成再初始化（比window.load更可靠）
-window.$docsify.plugins = [
-  function(hook){
-    hook.doneEach(function(){
-      renderGitalk();
-    });
-  }
-];
-</script>
+ 
   
   <!-- 手写明暗切换逻辑，无第三方插件、永不消失 -->
   <script>
