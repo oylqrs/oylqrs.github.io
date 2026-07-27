@@ -2,12 +2,12 @@
 
  
 - OpenPGP 是什么
-  `
+```
 # 基础定义
 OpenPGP 是一套开放的加密标准（RFC 4880），基于 PGP（Pretty Good Privacy），实现非对称加密、数字签名。
 日常使用的 GnuPG (GPG)、Kleopatra、Thunderbird 邮件加密都遵循 OpenPGP 规范。
-
-  `
+```
+  
 
 
 **核心思想：一对密钥**
