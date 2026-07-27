@@ -1,3 +1,4 @@
+![OpenPGP](source/img/fido2_logo.png)
 # fido2 介绍和使用方法
  
 
